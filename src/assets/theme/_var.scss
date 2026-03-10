@@ -1,0 +1,34 @@
+// @use "./fonts.scss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+$basefont:  "Inter", sans-serif;
+
+$white: white;
+$textclr: #ffffff;
+$black: #000000;
+$bodybg: #070322;
+$baseclr: #D09BFF;
+$bg0ff: #8400FF;
+$bgdff: #842DFF;
+$blueclrdark: #282446;
+$lighttextclr: #6F74B0;
+$danger: #FA2256;
+$green: #11CABE;
+$bluetxt: #B9BDEA;
+$lighttextclr2: #6F74AF;
+$borderclr: #1F1C38;
+$borderclr2: #272547;
+$borderclr3: #16122F;
+$borderclr4: #323056;
+$blueclrdark2: #232243;
+$bg62E: #17162E;
+$blueclrdark43: #231D44;
+
+$gradient: radial-gradient(50.91% 97.54% at 50% 2.46%, #A052FF 0%, #7300FF 100%);
+$gradient2: radial-gradient(100.91% 97.54% at 50% 2.46%, #A052FF 0%, #7300FF 100%);
+$borderbtnbg: linear-gradient(180deg, #16122f, #16122f);
+$border-gradient: linear-gradient(180deg, #7300FF 0%, #CDA4FF 100%);
+
+// z indexes
+$sidebar: 1049;

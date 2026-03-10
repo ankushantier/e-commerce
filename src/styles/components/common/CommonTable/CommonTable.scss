@@ -1,0 +1,75 @@
+.common_table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-bottom: 0;
+
+  thead {
+    tr {
+      th {
+        padding: 20px 15px 6px;
+        background: transparent;
+        color: #6B7280;
+        border-bottom: transparent;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+
+        &:first-child {
+          border-radius: 12px 0 0 12px;
+          padding-left: 30px;
+        }
+
+        &:last-child {
+          border-radius: 0 12px 12px 0;
+          width: 300px;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      background: rgba(245, 247, 250, 0.12);
+
+      td {
+        padding: 20px 15px;
+        background: transparent;
+        color: var(--white);
+        border-bottom: transparent;
+        font-weight: 600;
+        font-size: 18px;
+
+        &:first-child {
+          border-radius: 12px 0 0 12px;
+          padding-left: 30px;
+        }
+
+        &:last-child {
+          border-radius: 0 12px 12px 0;
+        }
+
+        &.table_status {
+          &.outbid {
+            color: #E7000B;
+          }
+
+          &.success {
+            color: #68A325;
+          }
+
+          &.active {
+            color: #D7B557;
+          }
+        }
+
+        .no_data {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 80px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.breadcrumb {
+  background: transparent;
+  display: flex;
+  align-items: center; // vertically center
+  flex-wrap: wrap;
+  padding: 0; // remove default padding
+
+  .breadcrumb-item {
+    display: flex; // ensures pseudo-element aligns correctly
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: capitalize;
+    font-size: 1.8rem; // consistent font size
+    transition: color 0.3s ease;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+    }
+
+    &.active {
+      color: yellow;
+    }
+
+    // Separator
+    +.breadcrumb-item::before {
+      content: ">";
+      display: inline-block; // ensures proper spacing
+      color: white;
+      padding: 0 8px;
+      opacity: 0.8;
+      line-height: 1.8rem; // match text height
+    }
+  }
+}

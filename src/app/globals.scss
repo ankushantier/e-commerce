@@ -1,0 +1,145 @@
+@use "../assets/theme/_var.scss" as *;
+@use "../styles/index.scss";
+@import "bootstrap/dist/css/bootstrap.min.css";
+
+html {
+    // font-size: 62.5%;
+}
+
+body {
+    background-color: #070322;
+    color: $textclr;
+    font-family: $basefont;
+    min-width: 32rem;
+}
+
+img,
+svg,
+iframe,
+canvas,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+p,
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a,
+span {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container,
+.container-fluid {
+    padding: 0 2rem;
+
+    @media (max-width: 1399px) {
+        padding: 0 1.5rem;
+    }
+}
+
+.container {
+    max-width: 143.5rem;
+
+    @media (max-width: 1479px) {
+        max-width: 112rem;
+    }
+
+    @media (max-width: 1199px) {
+        max-width: 92rem;
+    }
+}
+
+// .main_container{
+//     max-width: 130rem;
+//     @media (max-width: 1479px) {
+//         max-width: 112rem;
+//     }
+
+//     @media (max-width: 1199px) {
+//         max-width: 92rem;
+//     }
+// }
+/* Change the white to any color */
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+//     -webkit-box-shadow: 0 0 0 30px $black inset !important;
+//     -webkit-text-fill-color: $textclr !important;
+//     color: $textclr;
+//     caret-color: $textclr;
+//     font-family: inherit;
+// }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.go4109123758 {
+    .go2072408551 {
+        background: rgba($black, 1);
+        color: $textclr;
+        border: 1px solid rgba($white, 0.2);
+        font-size: 1.4rem;
+    }
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+}
+
+// ::-webkit-scrollbar {
+//     width: 0;
+//     height: 0;
+// }
+
+.l {
+    overflow: clip;
+}
+
+:root,
+[data-bs-theme="light"] {
+    --bs-success: #11CABE;
+    --bs-danger: #FA2256;
+    --bs-success-rgb: 17, 202, 190;
+    --bs-danger-rgb: 250, 34, 86;
+}
+
+.table {
+    --bs-table-bg: transparent;
+    --bs-table-color: $textclr;
+}

@@ -1,0 +1,23 @@
+@use "../../../../assets/theme/var" as *;
+
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+    background: $bodybg;
+}
+
+/* main content */
+
+.main-area {
+    flex: 1;
+    margin-left: 260px;
+    /* sidebar width */
+    display: flex;
+    flex-direction: column;
+}
+
+/* page content */
+
+.page-content {
+    padding: 30px;
+}

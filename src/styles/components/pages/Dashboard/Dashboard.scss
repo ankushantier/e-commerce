@@ -1,0 +1,50 @@
+@use "../../../../assets/theme/var.scss" as *;
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* card */
+
+.dashboard-card {
+    background: $blueclrdark;
+    border: 1px solid $borderclr2;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        transform: translateY(-4px);
+        border-color: $bgdff;
+    }
+
+    /* gradient line */
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background: $gradient;
+    }
+}
+
+.card-info {
+    p {
+        color: $lighttextclr;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color: $white;
+        font-size: 28px;
+        font-weight: 600;
+    }
+}
