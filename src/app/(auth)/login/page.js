@@ -5,7 +5,13 @@ import CommonInput from "../../../components/CommonInput/CommonInput";
 import React from "react";
 import { useFormik } from "formik";
 import { adminLogin } from "../../../services/adminService";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../../redux/Slices/admin.slice";
+import { useRouter } from "next/navigation";
+
 const Loginpage = () => {
+  const dispatch = useDispatch()
+  const router =useRouter()
 
   const { values, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -18,6 +24,9 @@ const Loginpage = () => {
 
         if (res.token) {
           resetForm();
+          dispatch(setToken(res.token))
+          router.push("/dashboard")
+
         }
 
       } catch (error) {

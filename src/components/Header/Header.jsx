@@ -1,9 +1,19 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { logoutAdmin } from "./../../redux/Slices/admin.slice";
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const router = useRouter()
+
+  const handleLogout = () => {
+    dispatch(logoutAdmin())
+    router.push("/login")
+  }
   return (
     <header className="header">
       <h2 className="page-title">Dashboard</h2>
@@ -31,7 +41,7 @@ const Header = () => {
           <Dropdown.Item href="/profile">Profile</Dropdown.Item>
           <Dropdown.Item href="/settings">Settings</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item className="logout">Logout</Dropdown.Item>
+          <Dropdown.Item className="logout" onClick={handleLogout}>Logout</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </header>
