@@ -1,9 +1,9 @@
 "use client"
 import Link from 'next/link';
-import CommonTable from '../../../components/CommonTable/CommonTable';
+import CommonTable from '../../../components/common/CommonTable/CommonTable';
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import { getAllUsers } from '../../../services/userService';
-import CommonPagination from '../../../components/CommonPagination/CommonPagination';
+import CommonPagination from '../../../components/common/CommonPagination/CommonPagination';
 import { useDispatch } from 'react-redux';
 import { setTotalUserCount } from '../../../redux/Slices/user.Slice';
 

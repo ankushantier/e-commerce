@@ -1,9 +1,9 @@
 "use client"
 import { useState } from 'react'
 import Link from 'next/link'
-import CommonButton from '../../../components/commonBtn/commonBtn'
-import CommonInput from '../../../components/CommonInput/CommonInput'
-import CommonSelect from '../../../components/CommonSelect/CommonSelect'
+import CommonButton from '../../../components/common/commonBtn/commonBtn'
+import CommonInput from '../../../components/common/CommonInput/CommonInput'
+import CommonSelect from '../../../components/common/CommonSelect/CommonSelect'
 
 const RegisterPage = () => {
   const [value, setValue] = useState('')

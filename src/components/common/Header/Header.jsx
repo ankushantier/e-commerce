@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { logoutAdmin } from "./../../redux/Slices/admin.slice";
+import { logoutAdmin } from "../../../redux/Slices/admin.slice";
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useDispatch, useSelector } from "react-redux";

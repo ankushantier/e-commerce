@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
-import CommonButton from "../../../components/commonBtn/commonBtn";
-import CommonInput from "../../../components/CommonInput/CommonInput";
+import CommonButton from "../../../components/common/commonBtn/commonBtn";
+import CommonInput from "../../../components/common/CommonInput/CommonInput";
 import React from "react";
 import { useFormik } from "formik";
 import { AdminLogin } from "../../../services/adminService";

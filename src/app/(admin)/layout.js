@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Header from "../../components/Header/Header";
+import Sidebar from "../../components/common/Sidebar/Sidebar";
+import Header from "../../components/common/Header/Header";
 import AuthGuard from "../../Guards/AuthGuard";
 
 const Adminlayout = ({ children }) => {

@@ -8,3 +8,14 @@ export const AdminLogin = async (loginDetails) => {
         throw error.response?.data || error.message;
     }
 };
+
+export const AddCategory = async (payload) => {
+    const { data } = await axiosInstance.post("categories/add", payload);
+
+    return data;
+};
+
+export const getListCategory = async () => {
+    const { data } = await axiosInstance.get("categories");
+    return data;
+};

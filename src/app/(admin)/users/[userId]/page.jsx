@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getUserById } from "../../../../services/userService";
-import CustomBreadcrumbs from "../../../../components/customBreadcrumbs/customBreadcrumbs";
+import CustomBreadcrumbs from "../../../../components/common/customBreadcrumbs/customBreadcrumbs";
 
 const UserDetailpage = () => {
 

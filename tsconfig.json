@@ -30,7 +30,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/customBreadcrumbs/customBreadcrumbs.jsx"  ],
+, "src/components/common/customBreadcrumbs/customBreadcrumbs.jsx"  ],
   "exclude": [
     "node_modules"
   ]
