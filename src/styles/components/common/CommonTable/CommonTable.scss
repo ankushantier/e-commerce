@@ -29,12 +29,11 @@
 
   tbody {
     tr {
-      background: rgb(57, 58, 58);
 
       td {
         padding: 20px 15px;
-        background: transparent;
-        color: white;
+        background: #ffffff;   // important for light theme
+        color: #333;
         border-bottom: transparent;
         font-weight: 500;
         font-size: 18px;

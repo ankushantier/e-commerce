@@ -19,3 +19,8 @@ export const getListCategory = async () => {
     const { data } = await axiosInstance.get("categories");
     return data;
 };
+
+export const DeleteCategory = async (id) => {
+    const res = await axiosInstance.delete(`categories/delete/${id}`);
+    return res.data;
+};

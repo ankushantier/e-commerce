@@ -1,12 +1,7 @@
-.category-list {
-  padding: 40px;
+@use '../../../../assets/theme/mixin.scss' as *;
 
-  &__title {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 30px;
-    text-align: center;
-  }
+.category-list {
+  @include card-bg;
 
   &__wrapper {
     list-style: none;
@@ -20,29 +15,62 @@
 }
 
 .category-card {
-  width: 220px;
-  background: #fff;
+  min-width: 220px;
+  max-width: 250px;
+  background: white;
   border-radius: 12px;
   padding: 25px;
   text-align: center;
 
-  border: 1px solid #eee;
-  cursor: pointer;
+  border: 1px solid #e5e7eb;
   transition: all 0.3s ease;
 
   h2 {
     font-size: 20px;
     font-weight: 500;
-    color: #333;
+    color: #1f2937;
+    margin-bottom: 20px;
   }
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    border-color: #4f46e5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-color: #2563eb;
+  }
+}
 
-    h2 {
-      color: #4f46e5;
-    }
+.card-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-edit {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: #1d4ed8;
+  }
+}
+
+.btn-delete {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background: #15803d;
   }
 }

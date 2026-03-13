@@ -18,7 +18,7 @@ const Categorypage = () => {
                     name: val.categoryName
                 }
                 const res = await AddCategory(payload)
-                setCategroyAdded(true)
+                setCategroyAdded((prev) => !prev)
             } catch (error) {
                 console.log(error);
             }
@@ -26,7 +26,7 @@ const Categorypage = () => {
     })
 
     return (
-        <div>
+        <div className='category_page'>
             <form onSubmit={handleSubmit}>
                 <CommonInput
                     name="categoryName"
@@ -37,7 +37,7 @@ const Categorypage = () => {
                 />
                 <CommonButton type='submit' text="Add Category" />
             </form>
-            <ListCategory categoryAdded={categoryAdded}/>
+            <ListCategory categoryAdded={categoryAdded} />
         </div>
     )
 }

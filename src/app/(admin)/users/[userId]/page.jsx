@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { getUserById } from "../../../../services/userService";
@@ -11,10 +10,10 @@ const UserDetailpage = () => {
     const [user, setUser] = useState(null);
 
     const breadcrumbData = [
-        // { label: "Home", path: "/" },
-        { label: "users", path: "/users" },
-        { label: "user Details" } // last item (active)
+        { label: "Users", path: "/users" },
+        { label: "User Details" }
     ];
+
     const fetchUser = async () => {
         try {
             const res = await getUserById(userId);
@@ -38,19 +37,41 @@ const UserDetailpage = () => {
         <div className="user-detail-page">
 
             <CustomBreadcrumbs breadcrumbData={breadcrumbData} />
-            <h1>User Detail</h1>
 
-            <div className="card p-3">
-                <h2>{user.username}</h2>
-                <p>Email: {user.useremail}</p>
-                <p>Gender: {user.gender}</p>
-                <p>Role: {user.role}</p>
-                <p>User ID: {user.uuid}</p>
+            <div className="user-detail-card">
+                <h1 className="page-title">User Detail</h1>
+
+                <div className="user-info-grid">
+
+                    <div className="info-item">
+                        <span>Username</span>
+                        <p>{user.username}</p>
+                    </div>
+
+                    <div className="info-item">
+                        <span>Email</span>
+                        <p>{user.useremail}</p>
+                    </div>
+
+                    <div className="info-item">
+                        <span>Gender</span>
+                        <p>{user.gender}</p>
+                    </div>
+
+                    <div className="info-item">
+                        <span>Role</span>
+                        <p>{user.role}</p>
+                    </div>
+
+                    <div className="info-item">
+                        <span>User ID</span>
+                        <p>{user.uuid}</p>
+                    </div>
+
+                </div>
             </div>
         </div>
     );
 };
 
 export default UserDetailpage;
-
-

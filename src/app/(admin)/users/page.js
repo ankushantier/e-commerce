@@ -16,6 +16,7 @@ const Userspage = () => {
     const dispatch = useDispatch()
 
     const fields = [
+        { label: "Sr No." },
         { label: "Name" },
         { label: "Email" },
         { label: "Gender" },

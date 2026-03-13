@@ -1,22 +1,25 @@
 .auth-layout {
     width: 100%;
     height: 100vh;
+    background: #f3f4f6;
     display: flex;
     justify-content: center;
     align-items: center;
 
     .auth-layout-in {
         width: 400px;
-        background: #8383665e;
+        background: #ffffff;
         padding: 40px;
-        border-radius: 10px;
-        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 
         .title {
             text-align: center;
             margin-bottom: 30px;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 600;
+            color: #1f2937;
         }
 
         .forgot {
@@ -25,20 +28,29 @@
 
             a {
                 font-size: 13px;
-                color: #007bff;
+                color: #2563eb;
                 text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
 
         .register {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
             font-size: 14px;
+            color: #6b7280;
 
             a {
-                color: #007bff;
+                color: #2563eb;
                 text-decoration: none;
                 font-weight: 500;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }

@@ -3,7 +3,7 @@
 .admin-layout {
     display: flex;
     min-height: 100vh;
-    background: #6b7276;
+    background: #eef1f5; // light gray background (not white)
 }
 
 /* main content */
@@ -11,7 +11,6 @@
 .main-area {
     flex: 1;
     margin-left: 260px;
-    /* sidebar width */
     display: flex;
     flex-direction: column;
 }
