@@ -1,7 +1,8 @@
-@use './commonInput/commonInput' as *;
-@use './CommonButton/CommonButton' as *;
-@use './CommonSelect/CommonSelect' as *;
-@use './Header/Header' as *;
-@use './Sidebar/Sidebar' as *;
+@use './commonInput/commonInput';
+@use './CommonButton/CommonButton';
+@use './CommonSelect/CommonSelect';
+@use './Header/Header';
+@use './Sidebar/Sidebar';
 @use './CommonTable/CommonTable.scss';
 @use './customBreadcrumbs/customBreadcrumbs.scss';
+@use './CommonPagination/CommonPagination.scss'

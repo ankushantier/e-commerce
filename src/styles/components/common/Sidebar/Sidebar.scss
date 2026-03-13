@@ -4,7 +4,7 @@
 .sidebar {
     width: 260px;
     height: 100vh;
-    background: $blueclrdark2;
+    background: #5d5d69;
     border-right: 1px solid $borderclr;
     padding: 30px 20px;
     position: fixed;
@@ -12,7 +12,6 @@
     top: 0;
     z-index: $sidebar;
     font-family: $basefont;
-
     display: flex;
     flex-direction: column;
 }
@@ -44,21 +43,15 @@
             padding: 12px 16px;
             border-radius: 8px;
             text-decoration: none;
-            color: $lighttextclr;
-            font-size: 14px;
+            color: white;
+            font-size: 18px;
             transition: 0.25s;
 
-            &:hover {
+            &:hover,
+            &.active {
                 background: $bg62E;
                 color: $white;
             }
         }
     }
-}
-
-/* active item example */
-
-.menu li.active a {
-    background: $gradient;
-    color: $white;
 }

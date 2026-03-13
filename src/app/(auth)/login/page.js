@@ -4,14 +4,14 @@ import CommonButton from "../../../components/commonBtn/commonBtn";
 import CommonInput from "../../../components/CommonInput/CommonInput";
 import React from "react";
 import { useFormik } from "formik";
-import { adminLogin } from "../../../services/adminService";
+import { AdminLogin } from "../../../services/adminService";
 import { useDispatch } from "react-redux";
-import { setToken } from "../../../redux/Slices/admin.slice";
+import { setAdminData, setToken } from "../../../redux/Slices/admin.slice";
 import { useRouter } from "next/navigation";
 
 const Loginpage = () => {
   const dispatch = useDispatch()
-  const router =useRouter()
+  const router = useRouter()
 
   const { values, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -20,13 +20,13 @@ const Loginpage = () => {
     },
     onSubmit: async (values, { resetForm }) => {
       try {
-        const res = await adminLogin(values);
-
+        const res = await AdminLogin(values);
+        console.log(res);
         if (res.token) {
           resetForm();
           dispatch(setToken(res.token))
+          dispatch(setAdminData(res.admin))
           router.push("/dashboard")
-
         }
 
       } catch (error) {

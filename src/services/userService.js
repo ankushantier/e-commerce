@@ -43,10 +43,18 @@ export default axiosInstance;
 //     return response.data;
 // };
 
-export const getAllUsers = async () => {
-    const { data } = await axiosInstance.get('/users')
-    return data
-}
+// export const getAllUsers = async (page) => {
+//       const { data } = await axiosInstance.get(`/users?page=${page}`);
+//     return data
+// }
+
+export const getAllUsers = async (page, limit) => {
+    const { data } = await axiosInstance.get("/users", {
+        params: { page, limit }
+    });
+
+    return data;
+};
 
 export const getUserById = async (id) => {
     const { data } = await axiosInstance.get(`/users/${id}`)

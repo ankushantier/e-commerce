@@ -2,7 +2,7 @@
 
 .header {
   height: 70px;
-  background: $blueclrdark2;
+  background: #5d5d69;
   border-bottom: 1px solid $borderclr;
   display: flex;
   justify-content: space-between;
@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: transparent !important;
+  background: #074d76 !important;
   border: none !important;
   box-shadow: none !important;
 }
@@ -51,11 +51,13 @@
   .name {
     font-size: 14px;
     color: $white;
+    text-transform: capitalize;
+
   }
 
   .email {
     font-size: 12px;
-    color: $lighttextclr;
+    color: #bec1ec;
   }
 }
 
@@ -65,7 +67,7 @@
   width: 230px;
   background: $blueclrdark;
   border: 1px solid $borderclr2;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 0;
 }
 
@@ -80,6 +82,7 @@
   .name {
     color: $white;
     font-size: 14px;
+    text-transform: capitalize;
   }
 
   .email {
@@ -93,10 +96,12 @@
 .dropdown-item {
   color: $bluetxt;
   padding: 10px 16px;
+  border-radius: 4px !important;
 
   &:hover {
-    background: $bg62E;
-    color: $white;
+    background: rgb(207, 196, 196);
+    color: black;
+    border-radius: inherit;
   }
 }
 

@@ -1,11 +1,16 @@
+"use client"
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const DashboardPage = () => {
+  const totalUserCount= useSelector((state) => state.users.totalUser)
+
   return (
     <div className="dashboard">
       <div className="dashboard-card">
         <div className="card-info">
           <p>Total Users</p>
-          <h2>1,240</h2>
+          <h2>{totalUserCount}</h2>
         </div>
       </div>
 

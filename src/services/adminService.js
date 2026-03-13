@@ -1,6 +1,6 @@
 import axiosInstance from "../axios/axios";
 
-export const adminLogin = async (loginDetails) => {
+export const AdminLogin = async (loginDetails) => {
     try {
         const { data } = await axiosInstance.post("admin/login", loginDetails);
         return data;
