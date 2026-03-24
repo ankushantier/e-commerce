@@ -1,84 +1,40 @@
-import React from "react";
+"use client"
+import { deleteProduct, GetAllProducts } from "../../../services/adminService";
+import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 
 const Productpage = () => {
-    const productList = [
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
-        },
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
-        },
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
-        },
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
-        },
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
-        },
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
-        },
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
-        },
-        {
-            name: "iPhone 15",
-            price: 79999,
-            description: "Latest Apple smartphone with powerful A17 chip.",
-            stock: 25,
-            brand: "Apple",
-            category: "Mobile",
+    const [products, setProducts] = useState([])
+    const getAllProducts = async () => {
+        const res = await GetAllProducts()
+        console.log(res);
+        setProducts(res.data)
+    }
+    useEffect(() => {
+        getAllProducts()
+    }, [])
+    const handleDelete = async (id) => {
+        try {
+            const res = await deleteProduct(id)
+            if (res.success) {
+                getAllProducts()
+            }
+            
+        } catch (error) {
+            console.log(error);
         }
-    ]
-
+    }
     return (
         <div className="product-page">
             <h2 className="common-subHeading">All Products</h2>
             <Row>
                 {
-                    productList.map((product, index) => {
+                    products.map((product, index) => {
                         return (
                             <Col lg={3} key={index}>
                                 <div className="product-card">
-                                    <h2 className="product-name">{product.name}</h2>
+                                    <button onClick={() => handleDelete(product.id)}>delete</button>
+                                    <h2 className="product-name">{product.product_name}</h2>
 
                                     <p className="product-price">₹ {product.price}</p>
 
@@ -88,7 +44,7 @@ const Productpage = () => {
 
                                     <div className="product-meta">
                                         <p><strong>Brand:</strong> {product.brand}</p>
-                                        <p><strong>Category:</strong> {product.category}</p>
+                                        <p><strong>Category:</strong> {product.category_name}</p>
                                         <p><strong>Stock:</strong> {product.stock}</p>
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@ import CommonInput from '../../../components/common/CommonInput/CommonInput'
 import React, { useEffect, useState } from 'react'
 import CommonSelect from '../../../components/common/CommonSelect/CommonSelect'
 import { useFormik } from 'formik'
-import { getListCategory } from '../../../services/adminService'
+import { AddProducts, getListCategory } from '../../../services/adminService'
 import CommonButton from '../../../components/common/commonBtn/commonBtn'
 
 const AddProductpage = () => {
@@ -38,9 +38,23 @@ const AddProductpage = () => {
             category: '',
             description: "",
         },
-        onSubmit: (val, action) => {
-            console.log(val);
-            action.resetForm()
+        onSubmit: async (val) => {
+            const payload = {
+                product_name: val.productName,
+                description: val.description,
+                brand: val.brand,
+                price: val.productPrice,
+                category_id: val.category,
+                stock: val.stock
+            }
+            try {
+                const res = await AddProducts(payload)
+                if (res.success) {
+                    console.log("added");
+                }
+            } catch (error) {
+                console.log(error);
+            }
         }
     })
     return (

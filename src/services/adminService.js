@@ -24,3 +24,17 @@ export const DeleteCategory = async (id) => {
     const res = await axiosInstance.delete(`categories/delete/${id}`);
     return res.data;
 };
+
+export const AddProducts = async (productData) => {
+    const res = await axiosInstance.post("products/add", productData);
+    return res.data;
+}
+export const GetAllProducts = async () => {
+    const res = await axiosInstance.get("products");
+    return res.data;
+}
+
+export const deleteProduct = async (id) => {
+    const res = await axiosInstance.delete(`products/delete/${id}`);
+    return res.data;
+}
