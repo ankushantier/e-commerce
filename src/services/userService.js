@@ -60,3 +60,7 @@ export const getUserById = async (id) => {
     const { data } = await axiosInstance.get(`/users/${id}`)
     return data
 }
+
+export const deleteUser = async (id) => {
+    return await axiosInstance.delete(`/users/${id}`)
+}

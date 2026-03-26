@@ -4,6 +4,17 @@
     padding: 40px;
     @include card-bg;
 
+    &-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+
+        .common-subHeading {
+            margin-bottom: 0;
+        }
+    }
+
     .row {
         margin: -10px;
 

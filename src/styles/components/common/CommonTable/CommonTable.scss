@@ -32,11 +32,15 @@
 
       td {
         padding: 20px 15px;
-        background: #ffffff;   // important for light theme
+        background: #ffffff; // important for light theme
         color: #333;
         border-bottom: transparent;
         font-weight: 500;
         font-size: 18px;
+
+        &:not(:nth-child(2)) {
+          text-transform: capitalize;
+        }
 
         &:first-child {
           border-radius: 12px 0 0 12px;
