@@ -38,3 +38,18 @@ export const deleteProduct = async (id) => {
     const res = await axiosInstance.delete(`products/delete/${id}`);
     return res.data;
 }
+
+export const updateProduct = async (id, payload) => {
+    const res = await axiosInstance.put(`products/update/${id}`, payload);
+    return res.data;
+};
+
+export const updateCategory = async (id, payload) => {
+    const res = await axiosInstance.put(`categories/update/${id}`, payload);
+    return res.data;
+};
+
+export const changeAdminPassword = async (payload) => {
+    const res = await axiosInstance.put(`admin/change-password`, payload);
+    return res.data;
+};

@@ -1,12 +1,19 @@
 "use client"
 import { useRouter } from "next/navigation";
+import { PencilLine, Trash2 } from "lucide-react";
 import CommonButton from "../../../components/common/commonBtn/commonBtn";
-import { deleteProduct, GetAllProducts } from "../../../services/adminService";
+import {
+    deleteProduct,
+    GetAllProducts
+} from "../../../services/adminService";
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
+import EditProductModal from "../../../components/common/Modals/EditProductModal/EditProductModal";
 
 const Productpage = () => {
     const [products, setProducts] = useState([])
+    const [showEdit, setShowEdit] = useState(false)
+    const [selectedProduct, setSelectedProduct] = useState(null)
     const router = useRouter()
     const getAllProducts = async () => {
         const res = await GetAllProducts()
@@ -27,6 +34,11 @@ const Productpage = () => {
             console.log(error);
         }
     }
+
+    const handleEdit = (product) => {
+        setSelectedProduct(product)
+        setShowEdit(true)
+    }
     return (
         <div className="product-page">
             <div className="card-bg-2 product-page-head">
@@ -38,9 +50,28 @@ const Productpage = () => {
                 {
                     products.map((product, index) => {
                         return (
-                            <Col lg={3} key={index}>
+                            <Col lg={3} key={product.id || index}>
                                 <div className="product-card">
-                                    <button onClick={() => handleDelete(product.id)}>delete</button>
+                                    <div className="product-actions">
+                                        <button
+                                            type="button"
+                                            className="icon-btn delete-btn"
+                                            onClick={() => handleDelete(product.id)}
+                                            title="Delete"
+                                        >
+                                            <Trash2 size={18} />
+                                        </button>
+
+                                        <button
+                                            type="button"
+                                            className="icon-btn edit-btn"
+                                            onClick={() => handleEdit(product)}
+                                            title="Edit"
+                                        >
+                                            <PencilLine size={18} />
+                                        </button>
+                                    </div>
+
                                     <h2 className="product-name">{product.product_name}</h2>
 
                                     <p className="product-price">₹ {product.price}</p>
@@ -60,6 +91,13 @@ const Productpage = () => {
                     })
                 }
             </Row>
+
+            <EditProductModal
+                show={showEdit}
+                onHide={() => setShowEdit(false)}
+                product={selectedProduct}
+                onUpdated={getAllProducts}
+            />
         </div>
     );
 };

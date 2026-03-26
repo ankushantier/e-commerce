@@ -1,0 +1,44 @@
+@use "../../../../assets/theme/mixin.scss" as *;
+
+.settings-page {
+  @include card-bg;
+}
+
+.settings-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.settings-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.settings-subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.settings-form {
+  max-width: 560px;
+}
+
+.settings-submit {
+  margin-top: 10px;
+  min-width: 240px;
+}
+
+.settings-message {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.settings-message--error {
+  color: #dc3545;
+}
+

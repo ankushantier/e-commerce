@@ -1,8 +1,11 @@
 import { DeleteCategory, getListCategory } from '../../../services/adminService'
 import React, { useEffect, useState } from 'react'
+import EditCategoryModal from '../../common/Modals/EditCategoryModal/EditCategoryModal'
 
 const ListCategory = ({ categoryAdded }) => {
     const [list, setList] = useState([])
+    const [showEdit, setShowEdit] = useState(false)
+    const [selectedCategory, setSelectedCategory] = useState(null)
     const getList = async () => {
         try {
             const res = await getListCategory()
@@ -29,6 +32,11 @@ const ListCategory = ({ categoryAdded }) => {
         } catch (error) {
             console.log(error);
         }
+    }
+
+    const handleEdit = (item) => {
+        setSelectedCategory(item)
+        setShowEdit(true)
     }
     return (
         <div className="category-list">
@@ -57,6 +65,13 @@ const ListCategory = ({ categoryAdded }) => {
                     </li>
                 ))}
             </ul>
+
+            <EditCategoryModal
+                show={showEdit}
+                onHide={() => setShowEdit(false)}
+                category={selectedCategory}
+                onUpdated={getList}
+            />
         </div>
     )
 }
